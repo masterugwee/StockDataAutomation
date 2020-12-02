@@ -10,7 +10,7 @@ Clone the repository
 
 Make the script executable
 
-``` chmod +x install```
+``` cd StockDataAutomation;chmod +x install```
 
 Run the script 
 
