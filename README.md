@@ -11,6 +11,7 @@ Clone the repository
 Make the script executable
 
 ``` chmod +x install```
+
 Run the script 
 
 ```./install ```
