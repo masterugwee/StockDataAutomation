@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
+import sys
 import sqlite3
+import os
 import datetime
 from tabulate import tabulate
+from time import sleep
+from pathlib import Path
 
 def stocks(con,cursor):
-    #conn = sqlite3.connect('Stock.db')
-    #cursor = conn.cursor()  #Executer
     print("Have you made any trades today(y/n)")
     checker = input()
     counter = 0
@@ -34,18 +36,18 @@ def display(conn,cursor):
     cursor.execute("select * from dailytransaction")
     result = cursor.fetchall()
     print(tabulate(result,headers=['Name','Amout Invested','Profit','Date'],tablefmt='psql'))
-
+    sleep(20)
 
 
 if __name__ == "__main__":
-    conn = sqlite3.connect('Stock.db')
-    cursor = conn.cursor()  #Executer
-    stocks(conn,cursor)
-    print("View history?(y/n)")
-    hist = input()
-    if(hist == 'y'):
-        display(conn,cursor)
-        conn.close()
-    else:
-        print("Bye!")
-        conn.close()
+        conn = sqlite3.connect('/home/varun/stock/Stock.db')
+        cursor = conn.cursor()  #Executer
+        stocks(conn,cursor)
+        print("View history?(y/n)")
+        hist = input()
+        if(hist == 'y'):
+            display(conn,cursor)
+            conn.close()
+        else:
+            print("Bye!")
+            conn.close()

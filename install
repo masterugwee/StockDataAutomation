@@ -5,5 +5,5 @@ pip install db-sqlite3
 pip install datetime
 pip install tabulate
 var_path=$PWD
-(crontab -l; echo "0 16 * * 1-5 $var_path/./stock.py";) | crontab -
+(crontab -l; echo "* 16 * * 1-5 /bin/bash -c $var_path/runner";) | crontab -
 

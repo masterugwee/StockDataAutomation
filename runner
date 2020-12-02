@@ -1,0 +1,3 @@
+#!/bin/bash
+export DISPLAY=:1.0
+gnome-terminal --full-screen --hide-menubar -- /usr/bin/bash -c '~/stock/./stock.py;exec /usr/bin/bash -i'
