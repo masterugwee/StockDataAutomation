@@ -15,3 +15,5 @@ Make the script executable
 Run the script 
 
 ```./install ```
+
+The install script will add the python script to the cronjob. It is set to run at 4pm everyday. You just have to enter the details the bot asks. :) 
