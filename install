@@ -1,0 +1,9 @@
+#!/bin/bash
+chmod +x stock.py
+sudo apt install sqlite3
+pip install db-sqlite3 
+pip install datetime
+pip install tabulate
+var_path=$PWD
+(crontab -l; echo "0 16 * * 1-5 $var_path/./stock.py";) | crontab -
+
